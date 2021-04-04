@@ -11,6 +11,7 @@ public class Main {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		/**
+		 * 仅仅是 Spring开发--IoC容器--装配 Bean：
 		 * Spring 开发:
 		 * Spring Framework主要包括几个模块：
 		 *     支持IoC和AOP的容器；
@@ -66,7 +67,7 @@ public class Main {
 		 * 		    应用程序组件既可以在Spring的IoC容器中运行，也可以自己编写代码自行组装配置；
 		 * 		    测试的时候并不依赖Spring容器，可单独进行测试，大大提高了开发效率。
 		 *
-		 * 实操联系：From: Spring开发--IoC容器--装配Bean
+		 * 实操参考：from: Spring开发--IoC容器--装配Bean
 		 * 我们需要编写一个特定的application.xml配置文件，告诉Spring的IoC容器应该如何创建并组装Bean：
 		 *      <?xml version="1.0" encoding="UTF-8"?>
 		 *      <beans xmlns="http://www.springframework.org/schema/beans"
