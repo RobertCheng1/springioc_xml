@@ -39,7 +39,8 @@ public class Main {
 		 * 		}
 		 * 不直接new一个DataSource，而是注入一个DataSource，因此，IoC又称为依赖注入（DI：Dependency Injection），
 		 * 它解决了一个最主要的问题：将组件的创建+配置与组件的使用相分离，并且，由IoC容器负责管理组件的生命周期。
-		 * 因为IoC容器要负责实例化所有的组件，因此，有必要告诉容器如何创建组件，以及各组件的依赖关系。一种最简单的配置是通过XML文件来实现，例如：
+		 * 因为IoC容器要负责实例化所有的组件，因此，有必要告诉容器如何创建组件，以及各组件的依赖关系。===IoC容器要负责实例化所有的组件===
+		 * 一种最简单的配置是通过XML文件来实现，例如：
 		 * 		<beans>
 		 * 		    <bean id="dataSource" class="HikariDataSource" />
 		 * 		    <bean id="bookService" class="BookService">
@@ -50,7 +51,7 @@ public class Main {
 		 * 		    </bean>
 		 * 		</beans>
 		 * 上述XML配置文件指示IoC容器创建3个JavaBean组件，并把id为dataSource的组件通过属性dataSource（即调用setDataSource()方法）
-		 * 注入到另外两个组件中。在Spring的IoC容器中，我们把所有组件统称为JavaBean，即配置一个组件就是配置一个Bean。
+		 * 注入到另外两个组件中。在Spring的IoC容器中，我们把所有组件统称为JavaBean，即配置一个组件就是配置一个Bean。===术语的表达===
 		 * 依赖注入方式:
 		 * 		很多Java类都具有带参数的构造方法，如果我们把BookService改造为通过构造方法注入，那么实现代码如下：
 		 * 			public class BookService {
