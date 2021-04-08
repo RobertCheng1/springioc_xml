@@ -39,7 +39,8 @@ public class Main {
 		 * 		}
 		 * 不直接new一个DataSource，而是注入一个DataSource，因此，IoC又称为依赖注入（DI：Dependency Injection），
 		 * 它解决了一个最主要的问题：将组件的创建+配置与组件的使用相分离，并且，由IoC容器负责管理组件的生命周期。
-		 * 因为IoC容器要负责实例化所有的组件，因此，有必要告诉容器如何创建组件，以及各组件的依赖关系。===IoC容器要负责实例化所有的组件===
+		 * 因为IoC容器要负责实例化所有的组件，因此，有必要告诉容器如何创建组件，以及各组件的依赖关系。
+		 * ===IoC容器要负责实例化所有的组件，和IoC容器--定制 Bean提到的 容器初始化时创建Bean，容器关闭前销毁Bean 遥相呼应===
 		 * 一种最简单的配置是通过XML文件来实现，例如：
 		 * 		<beans>
 		 * 		    <bean id="dataSource" class="HikariDataSource" />
