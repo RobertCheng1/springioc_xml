@@ -12,7 +12,7 @@ public class UserService {
 		this.mailService = mailService;
 	}
 
-	// Java versoin:
+	// Java version:
 	// private List<User> users = new ArrayList<>(List.of( // users:
 	// 		new User(1, "bob@example.com", "password", "Bob"), // bob
 	// 		new User(2, "alice@example.com", "password", "Alice"), // alice
@@ -35,7 +35,7 @@ public class UserService {
 	}
 
 	public User getUser(long id) {
-		// Java versoin:
+		// Java version:
 		// return this.users.stream().filter(user -> user.getId() == id).findFirst().orElseThrow();
 		return this.users.stream().filter(user -> user.getId() == id).findFirst().orElseThrow(RuntimeException::new);
 	}

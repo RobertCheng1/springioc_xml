@@ -52,8 +52,8 @@ public class Main {
 		 * 		    </bean>
 		 * 		</beans>
 		 * 上述XML配置文件指示IoC容器创建3个JavaBean组件，并把id为dataSource的组件通过属性dataSource（即调用setDataSource()方法）
-		 * 注入到另外两个组件中。在Spring的IoC容器中，我们把所有组件统称为JavaBean，即配置一个组件就是配置一个Bean。===术语的表达===
-		 * 依赖注入方式:
+		 * 注入到另外两个组件中。在 Spring 的IoC容器中，我们把所有组件统称为JavaBean，即配置一个组件就是配置一个Bean。===术语的表达===
+		 * 依赖（的）注入方式:
 		 * 		很多Java类都具有带参数的构造方法，如果我们把BookService改造为通过构造方法注入，那么实现代码如下：
 		 * 			public class BookService {
 		 * 			    private DataSource dataSource;
@@ -62,7 +62,7 @@ public class Main {
 		 * 			        this.dataSource = dataSource;
 		 * 			    }
 		 * 			}
-		 * 		Spring的IoC容器同时支持属性注入和构造方法注入，并允许混合使用。
+		 * 		Spring的IoC容器同时支持属性注入和构造方法注入，并允许混合使用。===和springioc_annotation工程中提到的 @Autowired 的注入方式有点类似===
 		 * 无侵入容器:
 		 * 		在设计上，Spring的IoC容器是一个高度可扩展的无侵入容器。
 		 * 		所谓无侵入，是指应用程序的组件无需实现Spring的特定接口，或者说，组件根本不知道自己在Spring的容器中运行。这种无侵入的设计有以下好处：
