@@ -69,6 +69,7 @@ public class Main {
 		 * 		    应用程序组件既可以在Spring的IoC容器中运行，也可以自己编写代码自行组装配置；
 		 * 		    测试的时候并不依赖Spring容器，可单独进行测试，大大提高了开发效率。
 		 *
+		 *
 		 * 实操参考：from: Spring开发--IoC容器--装配Bean
 		 * 我们需要编写一个特定的application.xml配置文件，告诉Spring的IoC容器应该如何创建并组装Bean：
 		 *      <?xml version="1.0" encoding="UTF-8"?>
@@ -102,9 +103,12 @@ public class Main {
 		 *      </bean>
 		 * 最后一步，我们需要创建一个Spring的IoC容器实例，然后加载配置文件，让Spring容器为我们创建并装配好配置文件中指定的所有Bean，这只需要一行代码：
 		 * 		ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+		 *
 		 * ApplicationContext:
-		 * 我们从创建Spring容器的代码：可以看到，Spring(自己加的IoC)容器就是 ApplicationContext，它是一个接口，有很多实现类，
+		 * 我们从创建 Spring容器的代码：可以看到，Spring(自己加的IoC)容器就是 ApplicationContext，它是一个接口，有很多实现类，
 		 * 这里我们选择 ClassPathXmlApplicationContext，表示它会自动从classpath中查找指定的XML配置文件。
+		 * 获得了 ApplicationContext 的实例，就获得了IoC容器的引用。===这简直太一针见血了,印证了 springioc_annotation工程中猜测===
+		 *
 		 * Spring还提供另一种IoC容器叫BeanFactory，使用方式和ApplicationContext类似：
 		 * BeanFactory和ApplicationContext的区别在于:
 		 * BeanFactory的实现是按需创建，即第一次获取Bean时才创建这个Bean，而ApplicationContext会一次性创建所有的Bean。
