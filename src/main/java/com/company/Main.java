@@ -23,6 +23,7 @@ public class Main {
 		 * Spring的核心就是提供了一个IoC容器，它可以管理所有轻量级的JavaBean组件，
 		 * 提供的底层服务包括组件的生命周期管理、配置和组装服务、AOP支持，以及建立在AOP基础上的声明式事务服务等。
 		 *
+		 * IoC是什么？解决了什么问题？
 		 * Spring提供的容器又称为IoC容器，什么是IoC? IoC全称Inversion of Control，直译为控制反转。
 		 * 传统的应用程序中，控制权在程序本身，程序的控制流程完全由开发者控制，
 		 * 例如：CartServlet创建了 BookService，在创建 BookService 的过程中，又创建了DataSource组件。
@@ -41,6 +42,8 @@ public class Main {
 		 * 它解决了一个最主要的问题：将组件的创建+配置与组件的使用相分离，并且，由IoC容器负责管理组件的生命周期。
 		 * 因为IoC容器要负责实例化所有的组件，因此，有必要告诉容器如何创建组件，以及各组件的依赖关系。
 		 * ===IoC容器要负责实例化所有的组件，和IoC容器--定制 Bean提到的 容器初始化时创建Bean，容器关闭前销毁Bean 遥相呼应===
+		 * 在Spring的IoC容器中，我们把所有组件统称为JavaBean，即配置一个组件就是配置一个Bean。
+		 *
 		 * 一种最简单的配置是通过XML文件来实现，例如：
 		 * 		<beans>
 		 * 		    <bean id="dataSource" class="HikariDataSource" />
@@ -103,6 +106,11 @@ public class Main {
 		 *      </bean>
 		 * 最后一步，我们需要创建一个Spring的IoC容器实例，然后加载配置文件，让Spring容器为我们创建并装配好配置文件中指定的所有Bean，这只需要一行代码：
 		 * 		ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+		 * 接下来，我们就可以从Spring容器中“取出”装配好的Bean然后使用它：
+		 * 		// 获取Bean:
+		 * 		UserService userService = context.getBean(UserService.class);
+		 * 		// 正常调用:
+		 * 		User user = userService.login("bob@example.com", "password");
 		 *
 		 * ApplicationContext:
 		 * 我们从创建 Spring容器的代码：可以看到，Spring(自己加的IoC)容器就是 ApplicationContext，它是一个接口，有很多实现类，
